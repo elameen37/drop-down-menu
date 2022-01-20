@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drop-down background changer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section>
+        <div class="bg">Red</div>
+        <select class="color" onchange="changeBgColor(this)">
+            <option value="#ff2323">RED</option>
+            <option value="#66ff00">GREEN</option>
+            <option value="#ff00dd">PINK</option>
+            <option value="#00ffff">AQUA</option>
+            <option value="#ffff12">YELLOW</option>
+        </select>
+    </section>
+
+    <script>
+        function changeBgColor(getColor){
+            let bg = document.querySelector('.bg');
+            let selectColor = getColor.value;
+            let text = getColor.options[getColor.selectedIndex].text;
+            bg.style.background = selectColor;
+            bg.innerHTML = text;
+        }
+    </script>
+</body>
+</html>
